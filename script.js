@@ -41,9 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
       btn.classList.add("active");
 
       // Αν είναι rivers, φορτώνει map
-      if (id === "rivers") {
-        setTimeout(initMap, 200);
-      }
+      if (id === "rivers") setTimeout(initMap, 200);
     });
   });
 
@@ -63,9 +61,12 @@ document.addEventListener("DOMContentLoaded", function() {
       { attribution: '' }
     ).addTo(map);
 
+    // Popup με εικόνες
     L.marker([37.055, 22.421])
       .addTo(map)
       .bindPopup(`<b>Ποταμός Ευρώτας</b><br>
+      <img src="Evrotas-River-Greece.jpg" alt="Ευρώτας" style="width:100%;margin-top:10px;border-radius:8px;"><br>
+      <img src="towns-menu.jpg" alt="Κοντινές πόλεις" style="width:100%;margin-top:10px;border-radius:8px;"><br>
       Ο Ευρώτας είναι ο σημαντικότερος ποταμός της Λακωνίας, με γύρω
 στα 82 χλμ. μήκος και πηγές στις νότιες πλαγιές του Ταΰγετου, που
 διασχίζει την πεδιάδα της Λακωνίας ως τον Λακωνικό Κόλπο.
