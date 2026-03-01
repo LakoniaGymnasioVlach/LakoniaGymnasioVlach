@@ -100,7 +100,7 @@ body {
 /* ====== Map ====== */
 #map {
   width: 100%;
-  height: 90vh;  /* Χάρτης καταλαμβάνει το 90% του ύψους της οθόνης */
+  height: 900px; /* Μεγαλύτερος χάρτης */
   border-radius: 12px;
   margin-top: 15px;
 }
