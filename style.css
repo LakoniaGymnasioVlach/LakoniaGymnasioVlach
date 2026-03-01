@@ -1,0 +1,106 @@
+/* ====== Γενικά ====== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* ====== Sidebar ====== */
+.sidebar {
+  width: 260px;
+  background: #111827;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.logo {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* ====== Accordion ====== */
+.category-header {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 12px;
+  background: #1f2937;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+.category-header:hover {
+  background: #374151;
+}
+
+.category-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+/* ====== Buttons ====== */
+.navBtn {
+  background: none;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+.navBtn:hover { background: #1f2937; }
+.navBtn.active { background: #2563eb; }
+
+.subBtn {
+  padding-left: 25px;
+  font-size: 14px;
+  background: #1e293b;
+}
+
+.subBtn:hover { background: #334155; }
+
+/* ====== Main content ====== */
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow: auto;
+}
+
+.page {
+  display: none;
+}
+
+.page.visible {
+  display: block;
+}
+
+/* ====== Card styling ====== */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ====== Map ====== */
+#map {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
