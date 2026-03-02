@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "" }).addTo(map);
 
     // Ευρώτας
-    L.marker([37.094,21.864]).addTo(map).bindPopup(`
+    L.marker([37.143,22.396]).addTo(map).bindPopup(`
       <div class="popup-card">
         <h3>Ποταμός Ευρώτας</h3>
         <img src="images/Evrotas-River-Greece.jpg" style="width:100%;margin:10px;border-radius:8px;">
