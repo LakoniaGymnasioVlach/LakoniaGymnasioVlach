@@ -16,7 +16,7 @@
 
     <!-- Υλική Πολιτιστική Κληρονομιά -->
     <div class="category">
-      <div class="category-header">🏛️Υλική Πολιτιστική Κληρονομιά</div>
+      <div class="category-header">🏛️ Υλική Πολιτιστική Κληρονομιά</div>
       <div class="category-content">
         <button class="navBtn subBtn" data-target="ancient">Αρχαία Μνημεία</button>
         <button class="navBtn subBtn" data-target="churches">Εκκλησίες</button>
@@ -26,7 +26,7 @@
 
     <!-- Άυλη Πολιτιστική Κληρονομιά -->
     <div class="category">
-      <div class="category-header">🎭Άυλη Πολιτιστική Κληρονομιά</div>
+      <div class="category-header">🎭 Άυλη Πολιτιστική Κληρονομιά</div>
       <div class="category-content">
         <button class="navBtn subBtn" data-target="recipes">Συνταγές</button>
         <button class="navBtn subBtn" data-target="products">Προϊόντα</button>
@@ -40,7 +40,7 @@
 
     <!-- Γεωφυσική Κληρονομιά -->
     <div class="category">
-      <div class="category-header">⛰️Γεωφυσική Κληρονομιά</div>
+      <div class="category-header">⛰️ Γεωφυσική Κληρονομιά</div>
       <div class="category-content">
         <button class="navBtn subBtn" data-target="rivers">Ποτάμια</button>
         <button class="navBtn subBtn" data-target="caves">Σπήλαια</button>
@@ -53,26 +53,108 @@
 
   <!-- Main content -->
   <div class="main">
-    <div id="ancient" class="page"><div class="card"><h1>Αρχαία Μνημεία</h1></div></div>
-    <div id="churches" class="page"><div class="card"><h1>Εκκλησίες</h1></div></div>
-    <div id="castles" class="page"><div class="card"><h1>Κάστρα</h1></div></div>
-    <div id="recipes" class="page"><div class="card"><h1>Συνταγές</h1></div></div>
-    <div id="products" class="page"><div class="card"><h1>Προϊόντα</h1></div></div>
-    <div id="costumes" class="page"><div class="card"><h1>Φορεσιές</h1></div></div>
-    <div id="dances" class="page"><div class="card"><h1>Χοροί</h1></div></div>
-    <div id="songs" class="page"><div class="card"><h1>Τραγούδια</h1></div></div>
-    <div id="weaving" class="page"><div class="card"><h1>Υφαντική Τέχνη</h1></div></div>
-    <div id="legends" class="page"><div class="card"><h1>Θρύλοι</h1></div></div>
 
+    <!-- Υλική Πολιτιστική Κληρονομιά -->
+    <div id="ancient" class="page">
+      <div class="card">
+        <h1>Αρχαία Μνημεία</h1>
+        <div id="map-ancient" class="map"></div>
+      </div>
+    </div>
+
+    <div id="churches" class="page">
+      <div class="card">
+        <h1>Εκκλησίες</h1>
+        <div id="map-churches" class="map"></div>
+      </div>
+    </div>
+
+    <div id="castles" class="page">
+      <div class="card">
+        <h1>Κάστρα</h1>
+        <div id="map-castles" class="map"></div>
+      </div>
+    </div>
+
+    <!-- Άυλη Πολιτιστική Κληρονομιά -->
+    <div id="recipes" class="page">
+      <div class="card">
+        <h1>Συνταγές</h1>
+        <div id="map-recipes" class="map"></div>
+      </div>
+    </div>
+
+    <div id="products" class="page">
+      <div class="card">
+        <h1>Προϊόντα</h1>
+        <div id="map-products" class="map"></div>
+      </div>
+    </div>
+
+    <div id="costumes" class="page">
+      <div class="card">
+        <h1>Φορεσιές</h1>
+        <div id="map-costumes" class="map"></div>
+      </div>
+    </div>
+
+    <div id="dances" class="page">
+      <div class="card">
+        <h1>Χοροί</h1>
+        <div id="map-dances" class="map"></div>
+      </div>
+    </div>
+
+    <div id="songs" class="page">
+      <div class="card">
+        <h1>Τραγούδια</h1>
+        <div id="map-songs" class="map"></div>
+      </div>
+    </div>
+
+    <div id="weaving" class="page">
+      <div class="card">
+        <h1>Υφαντική Τέχνη</h1>
+        <div id="map-weaving" class="map"></div>
+      </div>
+    </div>
+
+    <div id="legends" class="page">
+      <div class="card">
+        <h1>Θρύλοι</h1>
+        <div id="map-legends" class="map"></div>
+      </div>
+    </div>
+
+    <!-- Γεωφυσική Κληρονομιά -->
     <div id="rivers" class="page">
       <div class="card">
         <h1>Ποτάμια</h1>
-        <div id="map"></div>
+        <div id="map-rivers" class="map"></div>
       </div>
     </div>
-    <div id="caves" class="page"><div class="card"><h1>Σπήλαια</h1></div></div>
-    <div id="gorges" class="page"><div class="card"><h1>Φαράγγια</h1></div></div>
-    <div id="bridges" class="page"><div class="card"><h1>Γεφύρια</h1></div></div>
+
+    <div id="caves" class="page">
+      <div class="card">
+        <h1>Σπήλαια</h1>
+        <div id="map-caves" class="map"></div>
+      </div>
+    </div>
+
+    <div id="gorges" class="page">
+      <div class="card">
+        <h1>Φαράγγια</h1>
+        <div id="map-gorges" class="map"></div>
+      </div>
+    </div>
+
+    <div id="bridges" class="page">
+      <div class="card">
+        <h1>Γεφύρια</h1>
+        <div id="map-bridges" class="map"></div>
+      </div>
+    </div>
+
   </div>
 
 </div>
