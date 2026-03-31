@@ -4,20 +4,19 @@
 <meta charset="UTF-8">
 <title>Εξερευνήστε Λακωνία</title>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <style>
 body { margin:0; font-family:Arial; }
 .app { display:flex; height:100vh; }
-.sidebar { width:260px; background:#111; color:white; padding:20px; overflow:auto; }
-.category-header { cursor:pointer; padding:10px; background:#222; margin-top:10px; }
+.sidebar { width:260px; background:#111; color:white; padding:20px; }
+.category-header { cursor:pointer; background:#222; padding:10px; margin-top:10px; }
 .category-content { max-height:0; overflow:hidden; transition:0.3s; }
-.subBtn { display:block; width:100%; padding:10px; border:none; background:#333; color:white; cursor:pointer; }
-.main { flex:1; padding:20px; }
+.subBtn { width:100%; padding:10px; border:none; background:#333; color:white; cursor:pointer; }
 .page { display:none; }
 .page.visible { display:block; }
 .map { height:500px; }
-img { border-radius:8px; }
+.main { flex:1; padding:20px; }
 </style>
 </head>
 
@@ -65,7 +64,7 @@ img { border-radius:8px; }
 
 <div class="main">
 
-<!-- Όλες οι σελίδες -->
+<!-- pages -->
 <div id="ancient" class="page"><div id="map-ancient" class="map"></div></div>
 <div id="churches" class="page"><div id="map-churches" class="map"></div></div>
 <div id="castles" class="page"><div id="map-castles" class="map"></div></div>
