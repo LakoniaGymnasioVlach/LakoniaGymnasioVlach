@@ -3,93 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <title>Εξερευνήστε Λακωνία</title>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-
-<style>
-body { margin:0; font-family:Arial; }
-.app { display:flex; height:100vh; }
-.sidebar { width:260px; background:#111; color:white; padding:20px; }
-.category-header { cursor:pointer; background:#222; padding:10px; margin-top:10px; }
-.category-content { max-height:0; overflow:hidden; transition:0.3s; }
-.subBtn { width:100%; padding:10px; border:none; background:#333; color:white; cursor:pointer; }
-.page { display:none; }
-.page.visible { display:block; }
-.map { height:500px; }
-.main { flex:1; padding:20px; }
-</style>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
-
 <body>
 
 <div class="app">
 
-<div class="sidebar">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 class="logo">Εξερευνήστε</h2>
 
-<div class="category">
-<div class="category-header">🏛️ Υλική</div>
-<div class="category-content">
-<button class="subBtn" data-target="ancient">Αρχαία</button>
-<button class="subBtn" data-target="churches">Εκκλησίες</button>
-<button class="subBtn" data-target="castles">Κάστρα</button>
-</div>
-</div>
+    <!-- Υλική Πολιτιστική Κληρονομιά -->
+    <div class="category">
+      <div class="category-header">🏛️ Υλική Πολιτιστική Κληρονομιά</div>
+      <div class="category-content">
+        <button class="navBtn subBtn" data-target="ancient">Αρχαία Μνημεία</button>
+        <button class="navBtn subBtn" data-target="churches">Εκκλησίες</button>
+        <button class="navBtn subBtn" data-target="castles">Κάστρα</button>
+      </div>
+    </div>
 
-<div class="category">
-<div class="category-header">🎭 Άυλη</div>
-<div class="category-content">
-<button class="subBtn" data-target="recipes">Συνταγές</button>
-<button class="subBtn" data-target="products">Προϊόντα</button>
-<button class="subBtn" data-target="costumes">Φορεσιές</button>
-<button class="subBtn" data-target="dances">Χοροί</button>
-<button class="subBtn" data-target="songs">Τραγούδια</button>
-<button class="subBtn" data-target="weaving">Υφαντική</button>
-<button class="subBtn" data-target="legends">Θρύλοι</button>
-</div>
-</div>
+    <!-- Άυλη Πολιτιστική Κληρονομιά -->
+    <div class="category">
+      <div class="category-header">🎭 Άυλη Πολιτιστική Κληρονομιά</div>
+      <div class="category-content">
+        <button class="navBtn subBtn" data-target="recipes">Συνταγές</button>
+        <button class="navBtn subBtn" data-target="products">Προϊόντα</button>
+        <button class="navBtn subBtn" data-target="costumes">Φορεσιές</button>
+        <button class="navBtn subBtn" data-target="dances">Χοροί</button>
+        <button class="navBtn subBtn" data-target="songs">Τραγούδια</button>
+        <button class="navBtn subBtn" data-target="weaving">Υφαντική Τέχνη</button>
+        <button class="navBtn subBtn" data-target="legends">Θρύλοι</button>
+      </div>
+    </div>
 
-<div class="category">
-<div class="category-header">⛰️ Γεωφυσική</div>
-<div class="category-content">
-<button class="subBtn" data-target="rivers">Ποτάμια</button>
-<button class="subBtn" data-target="caves">Σπήλαια</button>
-<button class="subBtn" data-target="gorges">Φαράγγια</button>
-<button class="subBtn" data-target="bridges">Γεφύρια</button>
-<button class="subBtn" data-target="capes">Ακρωτήρια</button>
-<button class="subBtn" data-target="beaches">Παραλίες</button>
-</div>
-</div>
+    <!-- Γεωφυσική Κληρονομιά -->
+    <div class="category">
+      <div class="category-header">⛰️ Γεωφυσική Κληρονομιά</div>
+      <div class="category-content">
+        <button class="navBtn subBtn" data-target="rivers">Ποτάμια</button>
+        <button class="navBtn subBtn" data-target="caves">Σπήλαια</button>
+        <button class="navBtn subBtn" data-target="gorges">Φαράγγια</button>
+        <button class="navBtn subBtn" data-target="bridges">Γεφύρια</button>
+        <button class="navBtn subBtn" data-target="beaches">Παραλίες</button>
+        <button class="navBtn subBtn" data-target="capes">Ακρωτήρια</button>
+        <button class="navBtn subBtn" data-target="Geoparks">Γεωπάρκο Αγίου Νικολάου</button>
+        <button class="navBtn subBtn" data-target="protected_region">Προστατευόμενες περιοχές</button>
+      </div>
+    </div>
 
-</div>
+  </div>
 
-<div class="main">
+  <!-- Main content -->
+  <div class="main">
 
-<!-- pages -->
-<div id="ancient" class="page"><div id="map-ancient" class="map"></div></div>
-<div id="churches" class="page"><div id="map-churches" class="map"></div></div>
-<div id="castles" class="page"><div id="map-castles" class="map"></div></div>
+    <!-- Υλική Πολιτιστική Κληρονομιά -->
+    <div id="ancient" class="page">
+      <div class="card">
+        <h1>Αρχαία Μνημεία</h1>
+        <div id="map-ancient" class="map"></div>
+      </div>
+    </div>
 
-<div id="recipes" class="page"><div id="map-recipes" class="map"></div></div>
-<div id="products" class="page"><div id="map-products" class="map"></div></div>
-<div id="costumes" class="page"><div id="map-costumes" class="map"></div></div>
-<div id="dances" class="page"><div id="map-dances" class="map"></div></div>
-<div id="songs" class="page"><div id="map-songs" class="map"></div></div>
-<div id="weaving" class="page"><div id="map-weaving" class="map"></div></div>
-<div id="legends" class="page"><div id="map-legends" class="map"></div></div>
+    <div id="churches" class="page">
+      <div class="card">
+        <h1>Εκκλησίες</h1>
+        <div id="map-churches" class="map"></div>
+      </div>
+    </div>
 
-<div id="rivers" class="page"><div id="map-rivers" class="map"></div></div>
-<div id="caves" class="page"><div id="map-caves" class="map"></div></div>
-<div id="gorges" class="page"><div id="map-gorges" class="map"></div></div>
-<div id="bridges" class="page"><div id="map-bridges" class="map"></div></div>
-<div id="capes" class="page"><div id="map-capes" class="map"></div></div>
-<div id="beaches" class="page"><div id="map-beaches" class="map"></div></div>
+    <div id="castles" class="page">
+      <div class="card">
+        <h1>Κάστρα</h1>
+        <div id="map-castles" class="map"></div>
+      </div>
+    </div>
 
-</div>
+    <!-- Άυλη Πολιτιστική Κληρονομιά -->
+    <div id="recipes" class="page">
+      <div class="card">
+        <h1>Συνταγές</h1>
+        <div id="map-recipes" class="map"></div>
+      </div>
+    </div>
+
+    <div id="products" class="page">
+      <div class="card">
+        <h1>Προϊόντα</h1>
+        <div id="map-products" class="map"></div>
+      </div>
+    </div>
+
+    <div id="costumes" class="page">
+      <div class="card">
+        <h1>Φορεσιές</h1>
+        <div id="map-costumes" class="map"></div>
+      </div>
+    </div>
+
+    <div id="dances" class="page">
+      <div class="card">
+        <h1>Χοροί</h1>
+        <div id="map-dances" class="map"></div>
+      </div>
+    </div>
+
+    <div id="songs" class="page">
+      <div class="card">
+        <h1>Τραγούδια</h1>
+        <div id="map-songs" class="map"></div>
+      </div>
+    </div>
+
+    <div id="weaving" class="page">
+      <div class="card">
+        <h1>Υφαντική Τέχνη</h1>
+        <div id="map-weaving" class="map"></div>
+      </div>
+    </div>
+
+    <div id="legends" class="page">
+      <div class="card">
+        <h1>Θρύλοι</h1>
+        <div id="map-legends" class="map"></div>
+      </div>
+    </div>
+
+    <!-- Γεωφυσική Κληρονομιά -->
+    <div id="rivers" class="page">
+      <div class="card">
+        <h1>Ποτάμια</h1>
+        <div id="map-rivers" class="map"></div>
+      </div>
+    </div>
+
+    <div id="caves" class="page">
+      <div class="card">
+        <h1>Σπήλαια</h1>
+        <div id="map-caves" class="map"></div>
+      </div>
+    </div>
+
+    <div id="gorges" class="page">
+      <div class="card">
+        <h1>Φαράγγια</h1>
+        <div id="map-gorges" class="map"></div>
+      </div>
+    </div>
+
+    <div id="bridges" class="page">
+      <div class="card">
+        <h1>Γεφύρια</h1>
+        <div id="map-bridges" class="map"></div>
+      </div>
+    </div>
+    
+    <div id="beaches" class="page">
+      <div class="card">
+        <h1>Παραλίες</h1>
+        <div id="map-beaches" class="map"></div>
+      </div>
+    </div>
+    
+    <div id="capes" class="page">
+      <div class="card">
+        <h1>Ακρωτήρια</h1>
+        <div id="map-capes" class="map"></div>
+      </div>
+    </div>
+    
+    <div id="Geoparks" class="page">
+      <div class="card">
+        <h1>Γεωπάρκο Αγίου Νικολάου</h1>
+        <div id="map-Geoparks" class="map"></div>
+      </div>
+    </div>
+    
+    <div id="protected_region" class="page">
+      <div class="card">
+        <h1>Προστατευόμενες περιοχές</h1>
+        <div id="map-protected_region" class="map"></div>
+      </div>
+    </div>
+
+  </div>
 
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
