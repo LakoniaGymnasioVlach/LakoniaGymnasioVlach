@@ -1,3 +1,18 @@
+document.querySelectorAll(".sidebar b").forEach(title=>{
+  title.style.cursor = "pointer";
+
+  title.onclick = ()=>{
+    const box = title.parentElement;
+
+    const buttons = box.querySelectorAll("button");
+
+    buttons.forEach(btn=>{
+      btn.style.display =
+        btn.style.display === "none" ? "block" : "none";
+    });
+  };
+});
+
 document.addEventListener("DOMContentLoaded", function() {
 
   // Accordion menu
