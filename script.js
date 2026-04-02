@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function() {
         markers.push(L.marker([37.181,22.462]).bindPopup(`
           <div>
             <h3>Ποταμός Ευρώτας</h3>
-            <img src="" alt="Evrotas-River-Greece" style="width:100%;margin:10px;border-radius:8px;">
+            <img src="" alt="images/Evrotas-River-Greece" style="width:100%;margin:10px;border-radius:8px;">
             <img src="" alt="towns-menu" style="width:100%;margin:10px;border-radius:8px;">
            <p>Ο Ευρώτας είναι ο σημαντικότερος ποταμός της Λακωνίας, με γύρω
 στα 82 χλμ. μήκος και πηγές στις νότιες πλαγιές του Ταΰγετου, που
