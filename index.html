@@ -2,7 +2,7 @@
 <html lang="el">
 <head>
 <meta charset="UTF-8">
-<title>Εξερευνήστε Λακωνία</title>
+<title>Ο Τόπος μάς μιλάει: Ιστορικές -και όχι μόνο- διαδρομές στη Λακωνία.</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -179,6 +179,9 @@ h1 {
 
       // Placeholder markers array
       let markers = [];
+
+
+
 
      // =======================
     // ΔΥΝΑΤΟΤΗΤΑ ΝΑ ΠΡΟΣΘΕΣΕΙΣ ΚΕΙΜΕΝΑ ΚΑΙ ΦΩΤΟΓΡΑΦΙΕΣ
@@ -521,15 +524,7 @@ markers.push(
           </div>
         `));
         break;
-      case "products":
-        markers.push(L.marker([37.135,22.400]).bindPopup(`
-          <div>
-            <h3>Προϊόντα</h3>
-            <img src="" alt="Φωτογραφία εδώ" style="width:100%;margin:10px;border-radius:8px;">
-            <p>Κείμενο για προϊόντα.</p>
-          </div>
-        `));
-        break;
+     
       case "dances":
         markers.push(L.marker([37.1635154,22.40354]).bindPopup(`
           <div>
@@ -556,21 +551,15 @@ markers.push(
           </div>
         `));
         break;
-      case "songs":
-        markers.push(L.marker([37.142,22.418]).bindPopup(`
-          <div>
-            <h3>Τραγούδια</h3>
-            <img src="" alt="Φωτογραφία εδώ" style="width:100%;margin:10px;border-radius:8px;">
-            <p>Κείμενο για τραγούδια.</p>
-          </div>
-        `));
-        break;
+      
       case "weaving":
         markers.push(L.marker([37.137,22.422]).bindPopup(`
           <div>
-            <h3>Υφαντική Τέχνη</h3>
-            <img src="" alt="Φωτογραφία εδώ" style="width:100%;margin:10px;border-radius:8px;">
-            <p>Κείμενο για υφαντική τέχνη.</p>
+            <h3>Η υφαντική τέχνη στο Γεράκι Λακωνίας</h3>
+            <img src="images/texnh.jpg" alt="" style="width:100%;margin:10px;border-radius:8px;">
+            <img src="images/texnh1.jpg" alt="" style="width:100%;margin:10px;border-radius:8px;">
+            <img src="images/texnh2.jpg" alt="" style="width:100%;margin:10px;border-radius:8px;">
+            <p>Τα γερακίτικα κιλίμια είναι χειροποίητοι τάπητες, που υφαίνονται σε όρθιο ξύλινο αργαλειό. Είναι από πολύχρωμα μάλλινα νήματα με πολύπλοκο φυτικό ή γεωμετρικό διάκοσμο, και από βαμβακερό στημόνι. Τα κιλίμια υφαίνονται σε ποικίλες διαστάσεις και είναι μονοκόμματα. Οι γνώσεις υφαντικής μεταφέρονται προφορικά με βιωματική μαθητεία από τις μητέρες και τις γιαγιάδες στις κόρες ή γενικότερα μεταξύ συγγενικών προσώπων, αλλά και με εκπαιδευτικά προγράμματα σε οικιακά εργαστήρια. Η υφαντική τέχνη κιλιμιών στον όρθιο αργαλειό αποτελεί ισχυρό στοιχείο της πολιτισμικής ταυτότητας των κατοίκων του Γερακίου και των όμορων χωριών του Πάρνωνα. Γενικώς η  υφαντική στη Λακωνία ήταν βαθιά συνδεδεμένη με τη γυναικεία δημιουργικότητα, καθώς κάθε υφάντρα προσέθετε μικρές παραλλαγές στα σχέδια, συνδυασμούς χρωμάτων ή ακόμα και τεχνικές βελτιώσεις, δημιουργώντας μία παράδοση διαρκώς εξελισσόμενη και ανανεούμενη.  </p>
           </div>
         `));
         break;
@@ -631,7 +620,7 @@ markers.push(L.marker([36.8516107,22.660771]).bindPopup(`
  break;
 
 
-      // Γεωφυσική Κληρονομιά
+      // Φυσική Κληρονομιά
       case "rivers":
         markers.push(L.marker([37.181,22.462]).bindPopup(`
           <div>
@@ -741,24 +730,7 @@ markers.push(L.marker([36.8516107,22.660771]).bindPopup(`
           </div>
         `));
         break;
-      case "gorges":
-        markers.push(L.marker([37.148,22.428]).bindPopup(`
-          <div>
-            <h3>Φαράγγια</h3>
-            <img src="" alt="image" style="width:100%;margin:10px;border-radius:8px;">
-            <p>Κείμενο για φαράγγια.</p>
-          </div>
-        `));
-        break;
-      case "bridges":
-        markers.push(L.marker([37.152,22.423]).bindPopup(`
-          <div>
-            <h3>Γεφύρια</h3>
-            <img src="" alt="Φωτογραφία εδώ" style="width:100%;margin:10px;border-radius:8px;">
-            <p>Κείμενο για γεφύρια.</p>
-          </div>
-        `));
-        break;
+      
          case "beaches":
         markers.push(L.marker([36.688,22.826]).bindPopup(`
           <div>
@@ -874,6 +846,11 @@ markers.push(L.marker([36.8516107,22.660771]).bindPopup(`
   }
 
 });
+      
+      function openPage(id) {
+  const btn = document.querySelector(`.subBtn[data-target="${id}"]`);
+  if (btn) btn.click();
+}
 
 </script>
   <body>
@@ -892,6 +869,7 @@ markers.push(L.marker([36.8516107,22.660771]).bindPopup(`
         <button class="navBtn subBtn" data-target="home">Γυμνάσιο Βλαχιώτη</button>
         </div>
     </div>
+ 
 
     <!-- Υλική Πολιτιστική Κληρονομιά -->
     <div class="category">
@@ -933,29 +911,228 @@ markers.push(L.marker([36.8516107,22.660771]).bindPopup(`
         <button class="navBtn subBtn" data-target="protected_region">Προστατευόμενες περιοχές</button>
       </div>
     </div>
+    
+    <!-- Βιβλιογραφία -->
+    <div class="category">
+      <div class="category-header">📖 Βιβλιογραφία</div>
+      <div class="category-content">
+        <button class="navBtn subBtn" data-target="end">Βιβλιογραφία</button>
+</div>
+  </div>
+
+   
 
   </div>
 
   <!-- Main content -->
   <div class="main">
     
-   <!-- Αρχική Σελίδα -->
+<!-- Αρχική Σελίδα -->
 <div id="home" class="page">
   <div class="card">
-    <img src="images/school.png" alt="εικόνα" style="width:300px; border-radius:10px;">
+
+    <h1>Γυμνάσιο Βλαχιώτη (2025-2026)</h1>
+    <h2>Ο Τόπος μάς μιλάει: Ιστορικές -και όχι μόνο- διαδρομές στη Λακωνία.</h4>
+   
+
+    <div class="cross-grid">
+      
+      <img src="images/schoolfin.jpg">      
+      <img src="images/Sparti-Theatro.jpg">      
+      <img src="images/texnh.jpg">
+      <img src="images/Evrotas-River-Greece.jpg">
+    </div>
     
-    <h1>Αρχική Σελίδα</h1>
+    <a href="#"
+   onclick="document.querySelector('.subBtn[data-target=\'end\']').click(); return false;"
+   style="color:blue; text-decoration:underline;">
+  Κάνε κλικ εδώ για να μεταβείς στη Βιβλιογραφία
+</a>
 
-    <p>Κείμενο<p>
 
-    <img src="images/school1.png" alt="εικόνα2" style="width:300px; border-radius:10px;">
   </div>
 </div>
 
+<style>
+.cross-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
 
+.cross-grid img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+</style>
 
- 
+<!-- Βιβλιογραφία -->
+<div id="end" class="page">
+  <div class="card">
     
+    
+    <h1>Βιβλιογραφία</h1>
+
+    <p>Ελευθέριος Αλεξάκης, Πλοιάρια, πληρώματα και ναυτική-αλιευτική δραστηριότητα
+σε μια κοινότητα της Ν.Α. Λακωνίας: Η περίπτωση των Βελανιδίων (ΒΑΤΙΚΑ),
+Εταιρεία Λακωνικών Σπουδών 2006.
+Ελευθέριος Αλεξάκης, «Λαϊκές παραδόσεις και τοπίο στον Καβομαλιά: Μια
+ανθρωπολογική-σημειολογική προσέγγιση του φαντασιακού», Επετηρίς του
+Κέντρου Ερεύνης της Ελληνικής Λαογραφίας, Τόμος 33-34, (2009-2013), σελ. 279-
+298.
+Ελευθέριος Αλεξάκης, «Από το βουνό στη θάλασσα: Κτηνοτροφία, γεωργία και
+αλιεία στα Βάτικα Λακωνίας», στο: Πετρόκτιστοι φάροι: Ταίναρο και Μαλέας,
+‘Ιδρυμα Αικατερίνης Λασκαρίδη, Πειραιάς 2013, σελ. 203-226.
+Ειρήνη Καλπιτζή, Λαογραφικά των Βατίκων, Έκδοση της εφημερίδας «Τα Βάτικα»,
+Πειραιάς 2003.
+Νίκος Μπαριάμης, Αράχωβα: Χοροί και τραγούδια από τις Καρυές Λακωνίας,
+Καρυές 2022.
+Άλκης Ξανθάκης και Μεταξία Παπαποστόλου, Λακωνίας Περιήγησις: Παυσανία
+«Λακωνικά. Ένα φωτογραφικό οδοιπορικό μέσα από τη διαδρομή του Παυσανία,
+Εκδόσεις Κοχλίας, Αθήνα 2002.
+Christos Stavrakos, “The church of Sts Theodoroi (formerly St Kournatos) in Myrtia,
+Laconia, and its inscriptions”, στο: Marc Lauxtermann και Ida Toth (επιμ.), Inscribing
+Texts in Byzantium: Continuities and Transformations. Papers from the Forty-Ninth
+Spring Symposium of Byzantine Studies, Routledge, Λονδίνο και Νέα Υόρκη 2020,
+σελ. 347-364.
+Σύνδεσμος Νεαπολιτών «Τα Βάτικα», 1924-2024: Φωτογραφικό Λεύκωμα, 2024.<p>
+    
+    <h2>Εφημερίδες</h2>
+    
+    <p>«Τα Βάτικα»: Διμηνιαία Εφημερίδα, υπεύθυνος έκδοσης: Φοίβος Μπιλλίνης,
+Νεάπολη Λακωνίας.<p>
+    
+    <h3>Δικτυογραφία</h3>
+    
+    <p>ΒΙΚΙΠΑΙΔΕΙΑ: Η ελεύθερη εγκυκλοπαίδεια, διαθέσιμο στο:
+<a href="https://el.wikipedia.org" target="_blank">https://el.wikipedia.org</a>
+</p>
+
+<p>Δημοτική Αγορά της Λακωνίας, διαθέσιμο στο:
+<a href="https://www.dimotikiagoratislakonias.gr" target="_blank">https://www.dimotikiagoratislakonias.gr</a>
+</p>
+
+<p>Διάζωμα: Τα θέατρα, διαθέσιμο στο:
+<a href="https://diazoma.gr/theaters" target="_blank">https://diazoma.gr/theaters</a>
+</p>
+
+<p>Exploring Greece, διαθέσιμο στο:
+<a href="https://www.exploring-greece.gr/el/home" target="_blank">https://www.exploring-greece.gr/el/home</a>
+</p>
+
+<p>Ιστορία της Μονεμβασιάς, διαθέσιμο στο:
+<a href="https://monemvasia.gr/2017/05/ιστορία/" target="_blank">https://monemvasia.gr/2017/05/ιστορία/</a>
+</p>
+
+<p>Η υφαντική τέχνη στο Γεράκι Λακωνίας, διαθέσιμο στο:
+<a href="https://ayla.culture.gr/wp-content/uploads/2019/12/2020_τελικό_Δελτίο_Υφαντική_Γεράκι-Λακωνίας-1.pdf" target="_blank">
+https://ayla.culture.gr/.../Υφαντική_Γεράκι-Λακωνίας-1.pdf
+</a>
+</p>
+
+<p>Karidotsouflo.gr: A travel magazine for nature lovers, διαθέσιμο στο:
+<a href="https://karidotsouflo.gr" target="_blank">https://karidotsouflo.gr</a>
+</p>
+
+<p>ΚΑΣΤΡΟΛΟΓΟΣ: Ελληνικά Κάστρα, διαθέσιμο στο:
+<a href="https://www.kastra.eu" target="_blank">https://www.kastra.eu</a>
+</p>
+
+<p>Νίκος Κόκκας – Ταξίδι στη Νεάπολη Λακωνίας, διαθέσιμο στο:
+<a href="https://www.travel.gr/experiences/travel/taxidi-sti-neapoli-lakonias" target="_blank">
+https://www.travel.gr/experiences/travel/taxidi-sti-neapoli-lakonias
+</a>
+</p>
+
+<p>lakonia mobi, διαθέσιμο στο:
+<a href="https://lakonia.mobi" target="_blank">https://lakonia.mobi</a>
+</p>
+
+<p>Λακωνικός Τύπος, διαθέσιμο στο:
+<a href="https://lakonikos.gr/" target="_blank">https://lakonikos.gr/</a>
+</p>
+
+<p>Ασπασία Λούβη-Κίζη, «Μυστράς», διαθέσιμο στο:
+<a href="https://www.archaiologia.gr/blog/archaeological_site/μυστράς/" target="_blank">
+https://www.archaiologia.gr/.../μυστράς/
+</a>
+</p>
+
+<p>Μηχανή του Χρόνου – Βρονταμάς, διαθέσιμο στο:
+<a href="https://www.mixanitouxronou.gr/pos-o-impraim-ekapse-zontanoys-toys-katoikoys-sto-vrontama-arnithikan-na-proskynisoyn-kai-kleistikan-sto-spilaiomonastiro/" target="_blank">
+https://www.mixanitouxronou.gr/.../vrodama/
+</a>
+</p>
+
+<p>Μανιάτικο Μοιρολόι – Άυλη Πολιτιστική Κληρονομιά, διαθέσιμο στο:
+<a href="https://www.lakones.gr/2024/07/blog-post_25.html" target="_blank">
+https://www.lakones.gr/2024/07/blog-post_25.html
+</a>
+</p>
+
+<p>Μουσείο Ελληνικών Λαϊκών Μουσικών Οργάνων, διαθέσιμο στο:
+<a href="https://melmo.culture.gov.gr" target="_blank">https://melmo.culture.gov.gr</a>
+</p>
+
+<p>Ευαγγελία Πάντου κ.ά., Γεράκι Λακωνίας, διαθέσιμο στο:
+<a href="https://www.arxaiologikoktimatologio.gov.gr/resources/informationMaterial/IFM3TEQNM01/Γεράκι%20Λακωνίας.pdf" target="_blank">
+https://www.arxaiologikoktimatologio.gov.gr/.../Γεράκι%20Λακωνίας.pdf
+</a>
+</p>
+
+<p>Σοφικίτου Μαρία – Αρχαίο Θέατρο Σπάρτης, διαθέσιμο στο:
+<a href="https://diazoma.gr/site-assets/Datasheet_Spartis_v1.pdf" target="_blank">
+https://diazoma.gr/site-assets/Datasheet_Spartis_v1.pdf
+</a>
+</p>
+
+<p>Σύλλογος Νέων Βρονταμά – Φωτογραφίες Παλαιομονάστηρου, διαθέσιμο στο:
+<a href="https://syllogos-neon-vrontama-lakonias.webnode.gr/palaiomonastiro-vrontama/fotografies-paliomonastiro/" target="_blank">
+https://syllogos-neon-vrontama.../fotografies-paliomonastiro/
+</a>
+</p>
+
+<p>Το Μανιάτικο Μοιρολόι στο Εθνικό Ευρετήριο, διαθέσιμο στο:
+<a href="https://www.anagnostis.org/2024/07/04/to-maniatiko-moiroloi-sto-ethniko-evretirio-aylis-politistikis-klironomias/" target="_blank">
+https://www.anagnostis.org/.../maniatico-moiroloi/
+</a>
+</p>
+
+<p>Veils of Artemis, διαθέσιμο στο:
+<a href="https://www.veilsofartemis.com" target="_blank">https://www.veilsofartemis.com</a>
+</p>
+
+<p>Visit Peloponnese, διαθέσιμο στο:
+<a href="https://www.visitpeloponnese.com" target="_blank">https://www.visitpeloponnese.com</a>
+</p>
+
+<p>VisitVatika.gr, διαθέσιμο στο:
+<a href="https://www.visitvatika.gr" target="_blank">https://www.visitvatika.gr</a>
+</p>
+
+<p>Υπουργείο Περιβάλλοντος – Διατηρητέα Κτίρια, διαθέσιμο στο:
+<a href="https://estia.minenv.gr" target="_blank">https://estia.minenv.gr</a>
+</p>
+
+<p>Υπουργείο Πολιτισμού – Οδυσσεύς, διαθέσιμο στο:
+<a href="http://odysseus.culture.gr" target="_blank">http://odysseus.culture.gr</a>
+</p>
+
+    
+    <h4>Προφορικές Συνεντεύξεις</h4>
+    
+    <p>Προφορική συνέντευξη με Νίκο Μπαριάμη, υπεύθυνο της «Λαογραφικής Ομάδας
+Λακωνίας», τοπικό ερευνητή.<p>
+
+    
+  </div>
+</div>
+
     <!-- Υλική Πολιτιστική Κληρονομιά -->
     <div id="ancient" class="page">
       <div class="card">
@@ -1102,6 +1279,7 @@ markers.push(L.marker([36.8516107,22.660771]).bindPopup(`
       </div>
     </div>
 
+    
   </div>
 
 </div>
