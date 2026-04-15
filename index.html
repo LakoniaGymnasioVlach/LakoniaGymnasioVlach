@@ -4,25 +4,24 @@
 <meta charset="UTF-8">
 <title>Ο Τόπος μάς μιλάει: Ιστορικές -και όχι μόνο- διαδρομές στη Λακωνία.</title>
 
-<link rel="icon" type="image/png" href="images/logo.png">
+<!-- Favicon from GitHub RAW -->
+<link rel="icon" type="image/png" 
+      href="https://raw.githubusercontent.com/LakoniaGymnasioVlach/LakoniaGymnasioVlach/main/images/logo.png">
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
-</head>
-
 <body>
 
-<!-- LOGO SECTION -->
+<!-- LOGO SECTION (σωστό, χωρίς κενό) -->
 <div class="logo">
-  <img src="images/logo.png" alt="">
+  <img src="https://raw.githubusercontent.com/LakoniaGymnasioVlach/LakoniaGymnasioVlach/main/images/logo.png" 
+       alt="Λογότυπο">
 </div>
 
-
-
-</head>
-  <style>body { 
+<style>
+body { 
   margin:0; 
   font-family: Arial, sans-serif; 
   background:#f4f6f8; 
@@ -43,9 +42,18 @@
   overflow-y:auto; 
 }
 
-.logo { 
-  font-size:22px; 
-  margin-bottom:20px; 
+/* LOGO styling */
+.logo {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background: none;
+}
+
+.logo img {
+  width: 180px;
+  height: auto;
+  display: inline-block;
 }
 
 .category-header { 
@@ -129,21 +137,15 @@
   border-radius:12px; 
 }
 
-body {
-  background: lightgray;
-}
-
 h1 {
   color: black;
 }
+</style>
 
-.logo {
-  background: none;
-  padding: 0;
-  margin: 0;
-}
+</body>
+</html>
 
-  </style>
+
   </head>
 
 
